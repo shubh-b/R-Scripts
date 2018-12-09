@@ -36,7 +36,7 @@ myfile00[[j]]<-myfile0[[j]]%>%
 myfile00[[j]]<-myfile00[[j]][-c(1:6),]		
 colnames(myfile00[[j]])<-as.vector(myfile0[[j]][4,-c(1:12)],"character")
 
-##Evaluate Difficulty Index
+## Evaluate Difficulty Index
 myfile[[j]]<-myfile00[[j]][-1,]
 myfilekeys[[j]]<-as.vector(myfile00[[j]][1,],"character")
 myscores[[j]]<-score(myfile[[j]],myfilekeys[[j]],output.scored=TRUE)
@@ -59,8 +59,9 @@ myfile_split0[[j]]<-myfile0[[j]][-c(1,3,4,5,6),-c(1:12)]
 colnames(myfile_split0[[j]])<-as.vector(myfile0[[j]][4,-c(1:12)],"character")
 
 
-##Topic-Wise Split of the Data File and Separate Analysis
-##Null lists of the objects
+
+## Topic-Wise Split of the Data File and Separate Analysis for Biserial Correlation and Discrimination Index.
+## Null lists of the objects
 
 myfile_split00[[j]]<-list();myfile_split[[j]]<-list();myfile_split_keys[[j]]<-list()
 myscores[[j]]<-list();x[[j]]<-list();P[[j]]<-list();score.level[[j]]<-list();hni[[j]]<-list();lni[[j]]<-list()
@@ -71,7 +72,7 @@ myfile_split00[[j]][[i]]<-myfile_split0[[j]][ , c(myfile_split0[[j]][1,]==topics
 myfile_split[[j]][[i]]<-myfile_split00[[j]][[i]][-1,]
 myfile_split_keys[[j]][[i]]<-as.vector(myfile_split00[[j]][[i]][1,],"character")
 
-##Topic Wise Calculations:
+## Topic Wise Calculations:
 myscores[[j]][[i]]<-score(myfile_split[[j]][[i]],myfile_split_keys[[j]][[i]],output.scored=TRUE)
 x[[j]][[i]]<-myscores[[j]][[i]]$scored
 P[[j]][[i]]<-myscores[[j]][[i]]$score
@@ -116,14 +117,14 @@ CTT.Report[[j]]<-data.frame(QId=Merged.Report[[j]]$QId, Diffi.Index=Merged.Repor
 }
 consol<-do.call("rbind",CTT.Report)
 
-##Create a new folder to save the report
+## Create a new folder to save the report
 outfolder0<-paste("Consolidated CTT.Report From",length(ABCDXFiles),"Files",Sys.time())
 outfolder<-paste(gsub(":","~",outfolder0),"IST")
 dir.create(file.path(path,outfolder), showWarnings = FALSE)
 OutPath<-paste(path,"\\",outfolder,"\\",sep="")
 
 
-##Save the report in .csv format
+## Save the report in .csv format
 output0<-paste("CTT.Report from ",length(ABCDXFiles)," Files Total ",nrow(consol)," Qns ",Sys.time()," IST.csv",sep="")
 output<-paste(gsub(":","~",output0))
 consol%>%
