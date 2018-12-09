@@ -1,3 +1,4 @@
+## Item Analysis Report generation from a single Event's Response Sheets of Test-Takers.
 fileName<-readline()
 
 path<-readline()
@@ -22,7 +23,7 @@ myfile00<-myfile0%>%
 myfile00<-myfile00[-c(1:6),]		
 colnames(myfile00)<-as.vector(myfile0[4,-c(1:12)],"character")
 
-##Evaluate Difficulty Index
+## Evaluate Difficulty Index
 myfile<-myfile00[-1,]
 myfilekeys<-as.vector(myfile00[1,],"character")
 myscores<-score(myfile,myfilekeys,output.scored=TRUE)
@@ -46,8 +47,8 @@ myfile_split0<-myfile0[-c(1,3,4,5,6),-c(1:12)]
 colnames(myfile_split0)<-as.vector(myfile0[4,-c(1:12)],"character")
 
 
-##Topic-Wise Split of the Data File and Separate Analysis
-##Null lists of the objects
+## Topic-Wise Split of the Data File and Separate Analysis for Biserial Correlation and Discrimination Index.
+## Null lists of the objects
 
 myfile_split00<-list();myfile_split<-list();myfile_split_keys<-list();myscores<-list()
 x<-list();P<-list();score.level<-list();hni<-list();lni<-list();QId<-list()
