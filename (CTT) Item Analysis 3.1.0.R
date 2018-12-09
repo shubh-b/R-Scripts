@@ -1,4 +1,4 @@
-## Item Analysis Report generation from a single Event's Response Sheets of Test-Takers.
+## Item Analysis Report generation from a single Event's Response Sheet of Test-Takers.
 fileName<-readline()
 
 path<-readline()
