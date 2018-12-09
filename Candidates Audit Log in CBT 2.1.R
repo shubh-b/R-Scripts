@@ -1,4 +1,4 @@
-## Series of Time Stamps and Time Lengths extraction from a multiple Raw-Text Files saved in a folder.
+## Series of Time Stamps and Time Lengths extraction from multiple Raw-Text Files saved in a folder.
 ## Insert the inside folder location path where all the files are saved.
 path<-readline()
 
