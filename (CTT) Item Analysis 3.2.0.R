@@ -1,3 +1,4 @@
+## Consolidated Item Analysis Report generation from multiple Event's Response Sheets of Test-Takers.
 path<-readline()
 
 gsub("\\\\","/",path)
